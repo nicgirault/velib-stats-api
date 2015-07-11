@@ -1,3 +1,9 @@
+Usage
+-----
+
+http://62.4.25.210/velib-statistics/routes
+
+
 Installation
 ------------
 
