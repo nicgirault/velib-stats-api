@@ -1,4 +1,5 @@
 from .abc import db, BaseModel
+from datetime import datetime
 
 
 class StationSnapshot(db.Model, BaseModel):
@@ -10,7 +11,7 @@ class StationSnapshot(db.Model, BaseModel):
     bike_stands = db.Column(db.Integer, nullable=False)
     available_bike_stands = db.Column(db.Integer, nullable=False)
     available_bikes = db.Column(db.Integer, nullable=False)
-    last_update = db.Column(db.Integer, nullable=False)
+    last_update = db.Column(db.DateTime, nullable=False)
 
     def __init__(self, stationData):
         self.number = stationData.get('number')
@@ -19,4 +20,4 @@ class StationSnapshot(db.Model, BaseModel):
         self.bike_stands = stationData.get('bike_stands')
         self.available_bike_stands = stationData.get('available_bike_stands')
         self.available_bikes = stationData.get('available_bikes')
-        self.last_update = stationData.get('last_update')
+        self.last_update = datetime.fromtimestamp(stationData.get('last_update')/1000)

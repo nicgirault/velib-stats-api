@@ -14,5 +14,6 @@ def get_stations_data():
     if response.status_code != 200:
         logging.error('Failed to fetch stations data')
         logging.error(response.text)
+        return []
     else:
         return json.loads(response.text)
