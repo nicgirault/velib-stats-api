@@ -8,8 +8,10 @@ from util import parse_params, handle_help
 
 class StationAPI(Resource):
 
-    def get(self, station_id):
-        query = StationSnapshot.query.filter_by(number=station_id)\
+    def get(self, contract_name, station_id):
+        query = StationSnapshot.query\
+            .filter_by(number=station_id)\
+            .filter_by(contract_name=contract_name)\
             .order_by(StationSnapshot.last_update)
 
         period = request.args.get('period')
