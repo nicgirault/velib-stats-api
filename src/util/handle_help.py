@@ -3,7 +3,7 @@ from flask import request, jsonify
 from flask.ext.restful import reqparse
 
 help_messages = {
-    'station': """
+    'station:get': """
         Allowed query parameters are:
             period: today
     """
