@@ -1,7 +1,6 @@
 from flask import jsonify
 from flask.ext.restful import Resource
 
-from model.abc import db
 from model import StationSnapshot
 from util import parse_params
 

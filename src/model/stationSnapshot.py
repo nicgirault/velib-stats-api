@@ -1,7 +1,7 @@
 from .abc import db, BaseModel
 
 
-class StationShapshot(db.Model, BaseModel):
+class StationSnapshot(db.Model, BaseModel):
 
     id = db.Column(db.Integer, primary_key=True)
     number = db.Column(db.Integer, nullable=False)
