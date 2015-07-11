@@ -7,8 +7,8 @@ PORT = int(os.getenv('PORT', '5000'))
 POSTGRES = {
     'user': os.getenv('POSTGRES_USER', 'api'),
     'pw': os.getenv('POSTGRES_PW', ''),
-    'host': os.getenv('POSTGRES_HOST', os.getenv('localhost')),
-    'port': os.getenv('POSTGRES_PORT', os.getenv('5432')),
+    'host': os.getenv('POSTGRES_HOST', 'localhost'),
+    'port': os.getenv('POSTGRES_PORT', '5432'),
     'db': os.getenv('POSTGRES_DB', 'velib_statistics'),
 }
 DB_URI = 'postgresql://%(user)s:%(pw)s@%(host)s:%(port)s/%(db)s' % POSTGRES
