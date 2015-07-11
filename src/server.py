@@ -18,10 +18,10 @@ CORS(
 )
 
 from route.common import common_blueprint
-server.register_blueprint(common_blueprint)
+server.register_blueprint(common_blueprint, url_prefix=config.APPLICATION_ROOT)
 
-from route.user import user_blueprint
-server.register_blueprint(user_blueprint)
+from route.stats import stats_blueprint
+server.register_blueprint(stats_blueprint, url_prefix=config.APPLICATION_ROOT)
 
 
 if __name__ == '__main__':
